@@ -10,8 +10,8 @@
 // const numbers = [5, 10, 15, 20, 25];
 
 // const filteredNumbers = numbers.filter(number => number >= 15);
-// console.log(filteredNumbers);
-// console.log(numbers);
+// console.log(filteredNumbers);  // [ 15, 20, 25 ]
+// console.log(numbers);  //[ 5, 10, 15, 20, 25 ]
 
 // -----------------------------------------------------------
 
@@ -52,10 +52,10 @@
  * Если не находит, возвращает undefined
  */
 
-const numbers = [5, 10, 15, 20, 25];
+// const numbers = [5, 10, 15, 20, 25];
 
-const number = numbers.find(number => number === 10);
-// console.log(number);
+// const number = numbers.find(number => number === 10);
+// console.log(number); // 10
 
 const players = [
   { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
@@ -85,8 +85,8 @@ const findPlayerById = (allplayer, playerId) => {
 // const findPlayerById = (allplayer, playerId) =>
 //   allplayer.find(({ id }) => id === playerId);
 
-console.log(findPlayerById(players, "player-1"));
-console.log(findPlayerById(players, "player-4"));
+// console.log(findPlayerById(players, "player-1"));
+// console.log(findPlayerById(players, "player-4"));
 
 // ----------------------------------------------
 

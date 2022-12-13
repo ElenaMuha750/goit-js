@@ -48,8 +48,8 @@ const numbers = [1, 9, 6, 2, 3];
 const descSortedNumbers = [...numbers].sort((a, b) => b - a);
 const ascSortedNumbers = [...numbers].sort((a, b) => a - b);
 console.log("descSortedNumbers", descSortedNumbers); // [9, 6, 3, 2, 1]
-console.log("ascSortedNumbers", ascSortedNumbers); // [1, 2, 3, 6, 9]
-console.log("numbers", numbers); // [1, 9, 6, 2, 3]
+// console.log("ascSortedNumbers", ascSortedNumbers); // [1, 2, 3, 6, 9]
+// console.log("numbers", numbers); // [1, 9, 6, 2, 3]
 
 // -----------------------------------------------------------------
 
@@ -83,4 +83,11 @@ const byName = [...players].sort((a, b) => {
     return -1;
   }
 });
-console.table(byName);
+// console.table(byName);
+
+//--------------------------------------------------------------
+
+// const students = ["Вика", "Андрей", "Олег", "Юля", "Борис", "Катя"];
+
+// const inAlphabetOrder = [...students].sort((a, b) => a.localeCompare(b));
+// console.log(inAlphabetOrder); // ['Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля']
