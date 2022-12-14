@@ -41,6 +41,19 @@
 // const hardcorePlayers = players.filter(player => player.timePlayed > 250);
 // console.table(hardcorePlayers);
 
+//--------------------------------------------------------------------
+// поиск уникалных элементов - filter
+
+const arr = [2, 2, 1, 44, 4, 4, 3, 3];
+
+const uniq = arr.filter((num, index, array) => {
+  console.log("array.indexOf(num)", array.indexOf(num));
+  console.log("current index", index);
+  return array.indexOf(num) === index;
+});
+
+console.log(uniq);
+
 // ---------------------------------------------------------------------
 
 /*                            FIND
