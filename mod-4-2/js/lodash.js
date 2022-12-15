@@ -12,12 +12,14 @@
  * - user?.location?.city
  */
 
-const user = {
-  name: "mango",
-  location: {
-    city: "Lviv",
-  },
-};
+//-----------------------------------------------------
+
+// const user = {
+//   name: "mango",
+//   location: {
+//     city: "Lviv",
+//   },
+// };
 
 // console.log(_.get(user, 'location.city'));
 
