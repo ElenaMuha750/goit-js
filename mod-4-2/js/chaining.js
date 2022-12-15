@@ -62,4 +62,19 @@ const element = {
 // element.toggleHovered().changeClass("open");
 element.changeClass("open");
 
-console.log(element);
+// console.log(element);
+
+// --------------------------------------------------------------
+
+//                 ПРОВЕРКА СВОЙСТ В ОБЪЕКТЕ
+
+const user = {
+  name: "Mango",
+  location: {
+    city: "Lviv",
+  },
+};
+
+console.log(user.location.city);
+
+console.log(user?.location?.city);
