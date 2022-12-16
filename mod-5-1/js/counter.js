@@ -10,12 +10,18 @@ const counter = {
   },
 };
 
+// console.log(document);
+
 const decrementBtn = document.querySelector(".js-decrement");
 const incrementBtn = document.querySelector(".js-increment");
 const valueEl = document.querySelector(".js-value");
 
+// console.log(decrementBtn);
+// console.log(incrementBtn);
+// console.log(valueEl);
+
 decrementBtn.addEventListener("click", function () {
-  console.log("Кликнули на декремент");
+  console.log("Кликнули на декримент");
 
   counter.decrement();
   console.log(counter);
@@ -30,4 +36,4 @@ incrementBtn.addEventListener("click", function () {
   valueEl.textContent = counter.value;
 });
 
-console.log(window);
+// console.log(window);
