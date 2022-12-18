@@ -1,3 +1,12 @@
+/*
+ * Функция обратного вызова (callback)
+ * - Функция может принимать другие функции как параметры
+ * - Функция которая передаётся другой функции как аргумент называетс
+ *   «функцией обратного (отложенного) вызова» (callback-функция)
+ * - Функция которая принимает другую функцию как параметр
+ *   или возвращает функцию как результат своей работы называется «функцией высшего порядка»
+ */
+
 // const numbers = [5, 10, 15, 20, 25];
 
 // // Классический for
@@ -47,6 +56,41 @@
 
 // -----------------------------------------------------------
 
+/*
+ * Отложенный вызов: регистрация событий
+ */
+
+// const buttonRef = document.querySelector('.js-button');
+
+// const handleBtnClick = function () {
+//     console.log('Клик по кнопке ' + Date.now());
+// };
+
+// buttonRef.addEventListener('click', handleBtnClick);
+
+//----------------------------------------------------------
+
+/*
+ * Отложенный вызов: геолокация
+ */
+
+// const onGetPositionSuccess = function (position) {
+//     console.log('Это вызов onGetPositionSuccess');
+//     console.log(position);
+// };
+
+// const onGetPositionError = function (error) {
+//     console.log('Это вызов onGetPositionError');
+//     console.log(error);
+// };
+
+// window.navigator.geolocation.getCurrentPosition(
+//     onGetPositionSuccess,
+//     onGetPositionError,
+// );
+
+//-----------------------------------------------------------
+
 // Отложенный вызов: интервалы
 
 // const callback = () => {
@@ -58,6 +102,24 @@
 // setTimeout(callback, 2000);
 
 // console.log("После таймаута");
+
+//-------------------------------------------------------------
+
+/*
+ * Отложенный вызов: http-запрос
+ * - API URL: https://pokeapi.co/api/v2/pokemon
+ */
+
+// const onRequestSuccess = function (response) {
+//     console.log(
+//         'Вызов функции onRequestSuccess после успешного ответа бекенда',
+//     );
+//     console.log(response);
+// };
+
+// fetch('https://pokeapi.co/api/v2/pokemon')
+//     .then(res => res.json())
+//     .then(onRequestSuccess);
 
 // -------------------------------------------------------------
 
@@ -78,6 +140,11 @@
 //   return filteredArray;
 // };
 
+// 1. надо передать функцию
+// 2. функция получает элемент массива
+// 3. если элемент массива удовлетворяет условию то функция вернет true
+// 3. если элемент массива НЕ удовлетворяет условию то функция вернет false
+
 // const callback1 = function (value) {
 //   return value >= 3;
 // };
@@ -95,6 +162,13 @@
 //   { name: "grapes", quantity: 150, isFresh: false },
 //   { name: "bananas", quantity: 100, isFresh: true },
 // ];
+
+// const getFruitsWithQuantity = function (fruit) {
+//   return fruit.quantity >= 120;
+// };
+
+// const r3 = filter(fruits, getFruitsWithQuantity);
+// console.log(r3);
 
 // --------------------------------------------------------------
 
@@ -258,3 +332,38 @@
 // Метод deposit вызывает onError если amount больше
 // TRANSACTION_LIMIT или меньше либо равен нулю,
 // и onSuccess в противном случае.
+
+//---------------------------------------------------------
+
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// function makeMessage(pizzaName, callback) {
+//   return callback(pizzaName);
+// }
+
+// console.log(makeMessage('Royal Grand', makePizza));
+// console.log(makeMessage('Ultracheese', deliverPizza));
+
+//------------------------------------------------------
+
+// Встроенная инлайн Функция
+
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// makePizza('Royal Grand', function deliverPizza(pizzaName) {
+//   console.log(`Delivering pizza ${pizzaName}.`);
+// });
+// // Change code below this line
+
+// makePizza('Ultracheese', function eatPizza(pizzaName) {
+//   console.log(`Eating pizza ${pizzaName}`);
+// });
