@@ -210,27 +210,18 @@
 
 //--------------------------------------------------------------
 
-const fruits = ['Apple', 'Apple', 'Orange'];
+// const fruits = ['Apple', 'Apple', 'Orange'];
 
-let fn = fruits.reduce((acc, fruit) => {
-  acc[fruit] = (acc[fruit] || 0) + 1;
-  return acc;
-}, {});
+// let fn = fruits.reduce((acc, fruit) => {
+//   acc[fruit] = (acc[fruit] || 0) + 1;
+//   return acc;
+// }, {});
 
 // let fn = fruits.reduce(
 //   (acc, fruit) => ({ ...acc, [fruit]: (acc[fruit] || 0) + 1 }),
 //   {}
 // );
 
-console.log(fn);
+// console.log(fn);
 
 //--------------------------------------
-
-// const example = {
-//     name: "Example",
-//     foo: () => {
-//         console.log(this)
-//     }
-// }
-
-// example.foo()
