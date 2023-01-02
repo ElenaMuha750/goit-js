@@ -7,18 +7,48 @@
 // Выведите в консоль последний элемент массива. Код должен работать для массива произвольной длины.
 // Удалите первый элемент и выведите его в консоль.
 // Вставьте «Country» и «Reggy» в начало массива.
-// const genres = ;
+
+// const genres = ['Jazz', 'Blues'];
+// console.log(genres); // ['Jazz', 'Blues']
+
+// genres.push('Рок-н-ролл');
+// console.log(genres); // ['Jazz', 'Blues', 'Рок-н-ролл']
+
+// console.log(genres[0]); // Jazz
+// console.log(genres[genres.length - 1]); // Рок-н-ролл
+
+// console.log(genres.shift()); // Jazz
+// console.log(genres); // ['Blues', 'Рок-н-ролл']
+
+// genres.unshift('Country', 'Reggy');
+// console.log(genres); // ['Country', 'Reggy', 'Blues', 'Рок-н-ролл']
+
+//------------------------------------------------------------
 
 // Example 2 - Массивы и строки
 
 // Напиши скрипт для вычисления площади прямоугольника со сторонами, значения которых хранятся в переменной values в виде строки. Значения гарантированно разделены пробелом.
 
 // const values = '8 11';
+// const arrNums = values.split(' ');
+// console.log(arrNums); // ['8', '11']
+
+// const sq = Number(arrNums[0]) * Number(arrNums[1]);
+// console.log(sq); // 88
+
+//------------------------------------------------------------
 
 // Example 3 - Перебор массива
 // Напиши скрипт для перебора массива fruits циклом for. Для каждого элемента массива выведи в консоль строку в формате номер_элемента: значение_элемента. Нумерация элементов должна начинаться с 1.
 
 // const fruits = ['🍎', '🍇', '🍑', '🍌', '🍋'];
+
+// for (let i = 0; i < fruits.length; i += 1) {
+//   // console.log(i + 1, '-', fruits[i]);
+//   console.log(`${i + 1} - ${fruits[i]}`);
+// }
+
+//------------------------------------------------------------
 
 // Example 4 - Массивы и циклы
 
@@ -27,128 +57,180 @@
 // const names = 'Jacob,William,Solomon,Artemis';
 // const phones = '89001234567,89001112233,890055566377,890055566300';
 
+// const arrNames = names.split(',');
+// console.log(arrNames); // ['Jacob', 'William', 'Solomon', 'Artemis']
+
+// const arrPhones = phones.split(',');
+// console.log(arrPhones);
+
+// for (let i = 0; i < arrNames.length; i += 1) {
+//   const fullString = `${arrNames[i]} - ${arrPhones[i]}`;
+//   console.log(fullString);
+// }
+
+//------------------------------------------------------------
+
 // Example 5 - Массивы и строки
 
 // Напиши скрипт который выводит в консоль все слова строки кроме первого и последнего. Результирующая строка не должна начинаться или заканчиваться пробельным символом. Скрипт должен работать для любой строки.
 
 // const string = 'Welcome to the future';
+// const arrString = string.split(' ').slice(1, -1).join(' ');
+
+// console.log(arrString); // to the
+
+// arrString.shift(); // ['to', 'the', 'future']
+// arrString.pop(); // ['to', 'the']
+
+// console.log(arrString);
+
+// console.log(arrString.join(' ')); // to the
+
+//------------------------------------------------------------
 
 // Example 6 - Массивы и строки
 // Напиши скрипт который «разворачивает» строку (обратный порядок букв) и выводит ее в консоль.
 
 // const string = 'Welcome to the future';
+// const arrString = string.split(' ');
+// let revercedString = '';
+
+// for (let i = string.length - 1; i >= 0; i -= 1) {
+//   console.log(string[i]);
+//   revercedString += string[i];
+// }
+// console.log(revercedString); // erutuf eht ot emocleW
+
+// let secondVariant = string.split(' ').reverse().join(' ');
+// console.log(secondVariant); // future the to Welcome
+
+// let thirdVariant = string.split('').reverse().join('');
+// console.log(thirdVariant); // erutuf eht ot emocleW
+
+//------------------------------------------------------------
 
 // Example 7 - Поиск элемента
 // Напиши скрипт поиска самого маленького числа в массиве. Код должен работать для любого массива чисел. Используй цикл для решения задачи.
 
 // const numbers = [2, 17, 94, 1, 23, 37];
-// let min;
-// console.log(min); // 1
+// let min = numbers[0];
 
-//--------------------------------------------------------
+// for (let number of numbers) {
+//   console.log(number);
 
-// * Example 1
-const genres = ['Jazz', 'Blues'];
-genres.push('Рок-н-ролл');
-// console.log(genres[0])
-const lastElIndex = genres.length - 1;
-// console.log(genres[lastElIndex])
-const firstDeletedEl = genres.shift();
-// console.log(firstDeletedEl)
-genres.unshift('Country', 'Reggy');
-
-// genres.splice(0, 1, "New 1", "New 2")
-// console.log(genres)
-
-// * Example 2
-const values = '8 11';
-const arrNums = values.split(' ');
-const sq = Number(arrNums[0]) * Number(arrNums[1]);
-// console.log(sq)
-
-// * Example 3
-const fruits = ['🍎', '🍇', '🍑', '🍌', '🍋'];
-
-// for (let i = 0; i < fruits.length; i += 1) {
-//     // console.log(i + 1, ':', fruits[i])
-//     console.log(`${i + 1} : ${fruits[i]}`)
-// }
-
-// * Example 4
-const names = 'Jacob,William,Solomon,Artemis';
-const phones = '89001234567,89001112233,890055566377,890055566300';
-
-const namesArray = names.split(',');
-const phonesArray = phones.split(',');
-
-// for (let i = 0; i < namesArray.length; i += 1) {
-//     const fullString = `${namesArray[i]}: ${phonesArray[i]}`
-//     console.log(fullString)
-// }
-
-// * Example 5
-const string = 'Welcome to the future';
-const stringArray = string.split(' ');
-
-// stringArray.shift()
-// stringArray.pop()
-
-// console.log(stringArray.slice(1, -1).join(' '))
-
-// console.log(stringArray)
-// console.log(stringArray.join(' '))
-
-// * Example 6
-let revercedString = '';
-for (let i = string.length - 1; i >= 0; i -= 1) {
-  revercedString += string[i];
-}
-
-// console.log(revercedString)
-
-let secondVariant = string.split('').reverse().join('');
-
-// * Example 7
-// const numbers = [2, 17, 94, 1, 23, 37];
-// let min = numbers[numbers.length - 1];
-
-// for (let i = 0; i < numbers.length ; i += 1) {
-//     if (numbers[i] < min) {
-//         min = numbers[i]
-//     }
-// }
-
-// console.log(min); // 1
-
-const numbers = [51, 18, 13, 24, 7, 85, 19];
-let smallestNumber = numbers[0];
-
-// for (const number of numbers) {
-//     console.log('number:', number, 'smallestNumber', smallestNumber)
-//   if (number < smallestNumber) {
-//     smallestNumber = number;
+//   if (number < numbers[0]) {
+//     min = number;
 //   }
 // }
 
-// console.log('smallestNumber: ', smallestNumber);
-// console.log(Math.min(...numbers))
+// console.log('min:', min); // 1
 
-// let oneElement
-// let arr = []
+// console.log(Math.min(...numbers)); // 1
 
-// for (let i = 0; i < fruits.length; i += 1) {
-//     oneElement = fruits[i]
-//     console.log(fruits[i])
-//     arr.push(fruits[i]  + ':)')
+//============================================================
+
+// // * Example 1
+// const genres = ['Jazz', 'Blues'];
+// genres.push('Рок-н-ролл');
+// // console.log(genres[0])
+// const lastElIndex = genres.length - 1;
+// // console.log(genres[lastElIndex])
+// const firstDeletedEl = genres.shift();
+// // console.log(firstDeletedEl)
+// genres.unshift('Country', 'Reggy');
+
+// // genres.splice(0, 1, "New 1", "New 2")
+// // console.log(genres)
+
+// // * Example 2
+// const values = '8 11';
+// const arrNums = values.split(' ');
+// const sq = Number(arrNums[0]) * Number(arrNums[1]);
+// // console.log(sq)
+
+// // * Example 3
+// const fruits = ['🍎', '🍇', '🍑', '🍌', '🍋'];
+
+// // for (let i = 0; i < fruits.length; i += 1) {
+// //     // console.log(i + 1, ':', fruits[i])
+// //     console.log(`${i + 1} : ${fruits[i]}`)
+// // }
+
+// // * Example 4
+// const names = 'Jacob,William,Solomon,Artemis';
+// const phones = '89001234567,89001112233,890055566377,890055566300';
+
+// const namesArray = names.split(',');
+// const phonesArray = phones.split(',');
+
+// // for (let i = 0; i < namesArray.length; i += 1) {
+// //     const fullString = `${namesArray[i]}: ${phonesArray[i]}`
+// //     console.log(fullString)
+// // }
+
+// // * Example 5
+// const string = 'Welcome to the future';
+// const stringArray = string.split(' ');
+
+// // stringArray.shift()
+// // stringArray.pop()
+
+// // console.log(stringArray.slice(1, -1).join(' '))
+
+// // console.log(stringArray)
+// // console.log(stringArray.join(' '))
+
+// // * Example 6
+// let revercedString = '';
+// for (let i = string.length - 1; i >= 0; i -= 1) {
+//   revercedString += string[i];
 // }
 
-// console.log(arr)
+// // console.log(revercedString)
 
-let sum = 0;
+// let secondVariant = string.split('').reverse().join('');
 
-for (const number of numbers) {
-  console.log('number:', number, 'smallestNumber', smallestNumber);
-  sum += number;
-}
+// // * Example 7
+// // const numbers = [2, 17, 94, 1, 23, 37];
+// // let min = numbers[numbers.length - 1];
 
-console.log(sum);
+// // for (let i = 0; i < numbers.length ; i += 1) {
+// //     if (numbers[i] < min) {
+// //         min = numbers[i]
+// //     }
+// // }
+
+// // console.log(min); // 1
+
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let smallestNumber = numbers[0];
+
+// // for (const number of numbers) {
+// //     console.log('number:', number, 'smallestNumber', smallestNumber)
+// //   if (number < smallestNumber) {
+// //     smallestNumber = number;
+// //   }
+// // }
+
+// // console.log('smallestNumber: ', smallestNumber);
+// // console.log(Math.min(...numbers))
+
+// // let oneElement
+// // let arr = []
+
+// // for (let i = 0; i < fruits.length; i += 1) {
+// //     oneElement = fruits[i]
+// //     console.log(fruits[i])
+// //     arr.push(fruits[i]  + ':)')
+// // }
+
+// // console.log(arr)
+
+// let sum = 0;
+
+// for (const number of numbers) {
+//   console.log('number:', number, 'smallestNumber', smallestNumber);
+//   sum += number;
+// }
+
+// console.log(sum);
