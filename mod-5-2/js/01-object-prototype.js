@@ -12,20 +12,28 @@
 // const objC = {
 //   z: 5,
 // };
+// console.log('objC', objC); // {z: 5}
 
 // const objB = Object.create(objC);
 // objB.y = 2;
 
+// // console.log('objB', objB); // {y: 2}
+
+// // console.log(objB.y); // 2
+// // console.log(objB.z); // 5
+
 // const objA = Object.create(objB);
 // objA.x = 1;
 
-// console.log(objA.z);
+// objA.z = 1000;
+// console.log('objA', objA); // {x: 1, z: 1000}
 
-// console.log('objA', objA);
+// console.log(objA.hasOwnProperty('x')); // true
+// console.log(objA.hasOwnProperty('y')); // false
 
-// console.log(objA.hasOwnProperty('x'));
+// ------------------------------------------------------
 
-// const dummyObj = Object.create({ message: 'Это свойство объекта протортипа' });
+// const dummyObj = Object.create({ message: 'Это свойство объекта прототипа' });
 // dummyObj.message = 'Это собственное свойство объекта';
 // console.log('dummyObj', dummyObj);
 
@@ -44,6 +52,6 @@
 
 // const objA = Object.create({ z: 5 });
 // objA.y = 100;
-// console.log('objA', objA);
+// console.log('objA', objA); // {y: 100}
 
-// console.log(objA.x);
+// console.log(objA.x); // undefined

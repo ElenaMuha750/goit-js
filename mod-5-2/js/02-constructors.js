@@ -9,32 +9,55 @@
  * - Свойство Function.prototype
  */
 
-const Car = function ({ brand, model, price } = {}) {
-  // const { brand, model, price } = config;
-  // 2. Функция вызывается в контексте созданного объекта,
-  //    то есть в this записывается ссылка на него
-  this.brand = brand;
-  this.model = model;
-  this.price = price;
+// Свойство prototype есть ТОЛЬКО у функции!!!!!!!!!!!
+// В данном случае у функции конструктора
 
-  // 3. В свойство this.__proto__ записывается ссылка на обьект Car.prototype
-  //    тоесть Car.prototype это ПРОТОТИП будущего обьекта (экземпляра)
+// У объектов свойство __proto__ (2 почеркивания)!!!!!!!!!
 
-  // 4. Ссылка на обьект возвращается в место вызова new Car
-};
+//-----------------------------------------------------------
+// const Car = function (value) {
+//   // 2. Функция вызывается в контексте созданного объекта,
+//   //    то есть в this записывается ссылка на него
+//   console.log(this); // Car {}
 
-Car.prototype.sayHi = function () {
-  console.log('Car.prototype.sayHi -> this', this);
-  console.log('Hello :) ');
-};
+//   this.a = value;
+//   // 4. Ссылка на обьект возвращается в место вызова new Car
+// };
 
-Car.prototype.changePrice = function (newPrice) {
-  this.price = newPrice;
-};
+// // 1. Если функция вызывается через new, создаётся пустой объект
+// const myCar = new Car(5);
+// console.log(myCar); // Car {a: 5}
+
+// const myCar2 = new Car(10);
+// console.log(myCar2); // Car {a: 10}
+//-----------------------------------------------------------
+
+// const Car = function ({ brand, model, price } = {}) {
+//   // const { brand, model, price } = config;
+//   // 2. Функция вызывается в контексте созданного объекта,
+//   //    то есть в this записывается ссылка на него
+
+//   this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+
+//   // 3. В свойство this.__proto__ записывается ссылка на обьект Car.prototype, тоесть Car.prototype это ПРОТОТИП будущего обьекта (экземпляра)
+
+//   // 4. Ссылка на обьект возвращается в место вызова new Car
+// };
+
+// Car.prototype.sayHi = function () {
+//   console.log('Car.prototype.sayHi -> this', this);
+//   console.log('Hello :) ');
+// };
+
+// Car.prototype.changePrice = function (newPrice) {
+//   this.price = newPrice;
+// };
 
 // console.log(Car.prototype);
 
-// 1. Если функция вызывается через new, создаётся пустой объект
+// // 1. Если функция вызывается через new, создаётся пустой объект
 // const myCar = new Car({
 //   brand: 'Audi',
 //   model: 'Q3',
@@ -45,31 +68,38 @@ Car.prototype.changePrice = function (newPrice) {
 // myCar.sayHi();
 // myCar.changePrice(10000);
 
-// const myCar2 = new Car({ brand: 'BMW', model: 'X6', price: 50000 });
+// const myCar2 = new Car({
+//   brand: 'BMW',
+//   model: 'X6',
+//   price: 50000,
+// });
 // console.log(myCar2);
-
 // myCar2.sayHi();
 
-// const myCar3 = new Car({ brand: 'Audi', model: 'A6', price: 65000 });
+// const myCar3 = new Car({
+//   brand: 'Audi',
+//   model: 'A6',
+//   price: 65000,
+// });
 // console.log(myCar3);
-
 // myCar3.sayHi();
+//-----------------------------------------------------------
+// const User = function ({ email, password } = {}) {
+//   this.email = email;
+//   this.password = password;
+// };
 
-const User = function ({ email, password } = {}) {
-  this.email = email;
-  this.password = password;
-};
+// console.log(User.prototype); // {constructor: ƒ}
 
-console.log(User.prototype);
+// const mango = new User({ email: 'mango@mail.com', password: 1111111 });
 
-User.prototype.changeEmail = function (newMail) {
-  this.email = newMail;
-};
+// User.prototype.changeEmail = function (newMail) {
+//   this.email = newMail;
+// };
 
-const mango = new User({ email: 'mango@mail.com', password: 1111111 });
-
-mango.changeEmail('my-new-mail@mail.com');
+// mango.changeEmail('new-mail@mail.com');
 // console.log(mango);
+//-----------------------------------------------------------
 
 /*
  * Статические свойства и методы
@@ -77,16 +107,19 @@ mango.changeEmail('my-new-mail@mail.com');
  * - В статических методах не нужен this
  */
 
-User.message =
-  'Я статическое свойство, меня нет на экземплярах или в прототипе.';
+// console.log(Math.round(5.1)); // 5
+// console.log(Math.PI); // 3.141592653589793
 
-User.logInfo = function (obj) {
-  console.log('User.logInfo -> obj', obj);
-  console.log('Почта: ', obj.email);
-  console.log('Пароль: ', obj.password);
-};
+// User.message =
+//   'Я статическое свойство, меня нет на экземплярах или в прототипе.';
 
-User.logInfo(mango);
+// User.logInfo = function (obj) {
+//   console.log('User.logInfo -> obj', obj);
+//   console.log('Почта: ', obj.email);
+//   console.log('Пароль: ', obj.password);
+// };
+
+// User.logInfo(mango);
 
 // Object.keys()
 // Object.value()
@@ -97,6 +130,14 @@ User.logInfo(mango);
 // 4. Функция-конструктор это просто функция :)
 // 5. Всю магию делает оператор new
 // 6. Если функция вызывается через new, создаётся пустой объект
-// 7. Функция вызывается в контексте созданного объекта
+// 7. Функция конструктора вызывается в контексте созданного объекта
 // 8. В свойство this.__proto__ записывается ссылка на обьект Функция.prototype
-// 9. Ссылка на обьект возвращается в место вызова new Фунукция()
+// 9. Ссылка на обьект после выполнения функции конструктора возвращается в место вызова new Фунукция()
+
+// const objA = {
+//   x: 5,
+// };
+
+// console.log(objA.__proto__ === Object.prototype); // true
+
+// // this = Object.create(User.prototype);
