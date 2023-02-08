@@ -53,17 +53,17 @@ const ajax = new Berserk({
 // ajax.attack();
 // ajax.gainXp();
 
-class Mage extends Hero {
-  constructor({ spells, ...restProps } = {}) {
-    super(restProps);
+// class Mage extends Hero {
+//   constructor({ spells, ...restProps } = {}) {
+//     super(restProps);
 
-    this.spells = spells;
-  }
+//     this.spells = spells;
+//   }
 
-  cast() {
-    console.log(`${this.name} что-то там кастует 🧙‍♂️`);
-  }
-}
+//   cast() {
+//     console.log(`${this.name} что-то там кастует 🧙‍♂️`);
+//   }
+// }
 
 // const mango = new Warrior({ name: 'mango', xp: 1000, weapon: 'алебарда' });
 // console.log(mango);
