@@ -212,3 +212,4 @@
 
 // createTransaction("100 UAH", error, success.bind(user));
 // createTransaction("100 USD", error, USDsuccess.bind(hotel));
+//=========================================================
