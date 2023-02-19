@@ -1,4 +1,17 @@
 /*
+Властивості і методи рядків:
+- length
+- toLowerCase()
+- toUpperCase()
+- indexOf('')
+- includes('')
+- endsWith('')
+- replace('.js', '.min.js')
+- replaceAll('.js', '.min.js')
+- slice(from, to)
+*/
+
+/*
  * Длина строки, свойство length
  */
 const message = 'В этой строке 26 символов.';
